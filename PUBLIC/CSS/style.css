@@ -73,9 +73,9 @@ body {
     padding: 0 !important;
 }
 
-.card-text p {
+/* .card-text p { */
     /* font-weight: 300 !important; */
-}
+/* } */
 
 .listing-link {
     text-decoration: none;

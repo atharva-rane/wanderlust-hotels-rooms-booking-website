@@ -1,9 +1,8 @@
-<% layout("/layouts/boilerplate") %>
-<br><br>
+<% layout("layouts/boilerplate") %> <br /><br />
 <div class="row">
   <div class="col-8 offset-2">
     <h3>Create New Listing:</h3>
-    <form method="post" action="/listings">
+    <form method="post" action="/listings" class="needs-validation" novalidate>
       <div>
         <label for="title" class="form-label">Title: </label>
         <input
@@ -11,7 +10,9 @@
           placeholder="Add a catchy title"
           type="text"
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Title should be valid.</div>
       </div>
       <br />
       <div>
@@ -21,13 +22,15 @@
           placeholder="enter description"
           type="text"
           class="form-control"
+          required
         ></textarea>
+        <div class="invalid-feedback">Description should be valid.</div>
       </div>
       <br />
       <div>
         <label for="image" class="form-label">Image Link: </label>
         <input
-          name="listing[image]"
+          name="listing[image][url]"
           placeholder="enter image URL/Link"
           type="text"
           class="form-control"
@@ -40,9 +43,11 @@
           <input
             name="listing[price]"
             placeholder="1200"
-            type="number"
+            type="text"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">Price should be valid.</div>
         </div>
         <br />
         <div class="col-md-8">
@@ -52,7 +57,9 @@
             placeholder="India"
             type="text"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">Location should be valid.</div>
         </div>
       </div>
       <br />
@@ -63,12 +70,14 @@
           placeholder="enter location"
           type="text"
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Country name should be valid.</div>
       </div>
 
       <br />
       <button class="btn btn-dark add-btn">Add</button>
-      <br><br><br>
+      <br /><br /><br />
     </form>
   </div>
 </div>
